@@ -4,6 +4,12 @@ $(document).ready(function() {
   var thermostat = new Thermostat();
   // $('#temperature').text('temperature');
   updateTemperature();
+  $('#current-city').change(function() {
+  var city = $('#current-city').val();
+  $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=cb5a7e6c4c7412c2bff4c2a0153c9475&units=metric', function(data) {
+    $('#current-temperature').text(data.main.temp)
+  })
+})
 
 
 $('#temperature-up').on('click', function() { // event listener
