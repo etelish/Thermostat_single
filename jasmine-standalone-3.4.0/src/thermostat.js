@@ -54,10 +54,10 @@ for(i = 0; i < 1; i++){
 
     Thermostat.prototype.energyUsageStatus = function(){
       if(this.temp < 18){
-        return "Low usage";
+        return "low-usage";
       } else if(this.temp >= 18 && this.temp < 25){
-        return "Medium usage";
+        return "medium-usage";
       } else {
-        return "High usage";
+        return "high-usage";
       };
     };
